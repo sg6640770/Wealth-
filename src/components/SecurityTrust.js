@@ -13,17 +13,15 @@ const SecurityTrust = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm text-gray-700 font-medium">
           <div className="bg-indigo-50 rounded-xl p-6 border border-indigo-100">
-          <img style={{width:'262px',height:'262px'}} src="/images/i11.jpg" alt=""/>
-        
+            <img className="w-full h-60 object-cover rounded-lg mb-4" src="/images/i11.jpg" alt="Top Fund Houses"/>
             <b>Partnered with India’s Top Fund Houses</b>
-           
           </div>
           <div className="bg-indigo-50 rounded-xl p-6 border border-indigo-100">
-          <img style={{width:'262px',height:'262px'}} src="/images/i9.jpeg" alt=""/>
+            <img className="w-full h-60 object-cover rounded-lg mb-4" src="/images/i9.jpeg" alt="Zero Fees"/>
             <b>Zero Hidden Fees</b>
           </div>
           <div className="bg-indigo-50 rounded-xl p-6 border border-indigo-100">
-          <img style={{width:'262px',height:'262px'}}  src="/images/i12.png" alt=""/>
+            <img className="w-full h-60 object-cover rounded-lg mb-4" src="/images/i12.png" alt="Direct Fund Advisory"/>
             <b>Direct Fund Investments Advisory</b>
           </div>
         </div>

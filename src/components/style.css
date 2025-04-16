@@ -1,0 +1,25 @@
+/* style.css */
+.marquee-container {
+    width: 100%;
+    overflow: hidden; /* Hide the overflowing content */
+    background-color: black;
+  }
+
+  .marquee {
+    display: inline-block;
+    animation: marquee 12s linear infinite;
+  }
+
+  .marquee span {
+    display: inline-block;
+    padding-right: 10px; /* Adds space between items */
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }

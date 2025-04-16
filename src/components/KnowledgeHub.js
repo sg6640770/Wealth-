@@ -1,18 +1,19 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const articles = [
   {
-    img:"/images/i5.jpeg",
+    img: "/images/i5.jpeg",
     title: "Beginner’s Guide to Mutual Funds",
     desc: "Learn the basics of mutual fund investing and how to get started.",
   },
   {
-    img:"/images/i6.jpeg",
+    img: "/images/i6.jpeg",
     title: "Market Predictions & Investment Strategies",
     desc: "Expert insights to navigate market trends with confidence.",
   },
   {
-    img:"/images/i7.jpeg",
+    img: "/images/i7.jpeg",
     title: "Tax Planning & Wealth Creation",
     desc: "Optimize your investments with smart tax-saving strategies.",
   },
@@ -20,20 +21,27 @@ const articles = [
 
 const KnowledgeHub = () => {
   return (
-    <section className="bg-indigo-50 py-16 px-4">
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-10">
-          Knowledge Hub
-        </h2>
-        <p className="text-gray-600 text-lg mb-12">
+    <section className="py-5 bg-white text-center">
+      <div className="container">
+        <h2 className="fw-bold display-6 mb-2">Knowledge Hub</h2>
+        <p className="text-muted fs-5 mb-5">
           Latest Investment Insights & Smart Money Tips
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <div className="row g-4">
           {articles.map((item, index) => (
-            <div key={index} className="bg-white rounded-2xl shadow p-6 hover:shadow-lg transition text-left">
-              <img style={{width:'265px',height:'171px'}}  src={item.img} alt=""/>
-              <h3 className="text-xl font-semibold mb-2 text-indigo-700">{item.title}</h3>
-              <p className="text-gray-600 text-sm">{item.desc}</p>
+            <div key={index} className="col-md-4">
+              <div className="bg-light rounded-4 h-100 p-3 shadow-sm" style={{ backgroundColor: "#dbeafe" }}>
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="img-fluid rounded-top mb-3"
+                  style={{ height: '180px', objectFit: 'cover', width: '100%' }}
+                />
+                <h5 className="fw-semibold">{item.title}</h5>
+                {/* Optional: Include desc below if needed */}
+                {/* <p className="text-muted small">{item.desc}</p> */}
+              </div>
             </div>
           ))}
         </div>

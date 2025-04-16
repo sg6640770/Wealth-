@@ -1,27 +1,60 @@
+"use client"
+import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
+import "./style.css"
+const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-import React from 'react';
-
-
-export const Navbar = (props) => {
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <div  className="text-2xl font-bold text-indigo-600 logo"><img style={{ height: '75px' }} align="left" src="/images/logo.png" alt=""></img></div>
-        <div className="hidden md:flex space-x-6 text-gray-700 font-medium">
-          <a href="#" className="hover:text-indigo-600">Home</a>
-          <a href="#" className="hover:text-indigo-600">About Us</a>
-          <a href="#" className="hover:text-indigo-600">Knowledge Centre</a>
-          <a href="#" className="hover:text-indigo-600">Blog</a>
-          <a href="#" className="hover:text-indigo-600">FAQ</a>
-          <a href="#" className="hover:text-indigo-600">Contact Us</a>
-          <a href="#" className="hover:text-indigo-600">Team</a>
+    <>
+      <nav className="navbar bg-white shadow-sm py-3 sticky-top">
+        <div className="container-fluid px-4 d-flex justify-content-between align-items-center">
+          <a className="navbar-brand" href="#">
+            <img src="/images/logo.png" alt="Logo" style={{ height: '60px' }} />
+          </a>
+
+          {/* Mobile toggle button */}
+          <button
+            className="d-lg-none btn"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+
+          {/* Nav links */}
+          <div className={`d-lg-flex flex-grow-1 justify-content-center ${menuOpen ? 'd-block' : 'd-none'}`}>
+            <ul className="navbar-nav flex-lg-row flex-column gap-3 align-items-center">
+              <li className="nav-item"><a className="nav-link fw-medium" href="#">Home</a></li>
+              <li className="nav-item"><a className="nav-link fw-medium" href="#">About Us</a></li>
+              <li className="nav-item"><a className="nav-link fw-medium" href="#">Team</a></li>
+              <li className="nav-item"><a className="nav-link fw-medium" href="#">Knowledge Centre</a></li>
+              <li className="nav-item"><a className="nav-link fw-medium" href="#">Blog</a></li>
+              <li className="nav-item"><a className="nav-link fw-medium" href="#">FAQ</a></li>
+              <li className="nav-item"><a className="nav-link fw-medium" href="#">Contact Us</a></li>
+              <li className="nav-item"><a className="nav-link fw-medium" href="#">Login</a></li>
+            </ul>
+          </div>
+
+          {/* Social icons (desktop only) */}
+          <div className="d-none d-lg-flex align-items-center gap-3">
+            <a href="#" className="text-dark fs-5"><FaFacebookF /></a>
+            <a href="#" className="text-dark fs-5"><FaTwitter /></a>
+            <a href="#" className="text-dark fs-5"><FaInstagram /></a>
+            <a href="#" className="text-dark fs-5"><FaLinkedinIn /></a>
+            <a href="#" className="text-dark fs-5"><FaYoutube /></a>
+          </div>
         </div>
-        <button className="ml-4 px-5 py-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition duration-300">
-          Login
-        </button>
-        
+      </nav>
+
+      <div className="marquee-container bg-black text-center py-2 text-uppercase fw-bold fs-6 d-flex justify-content-center flex-wrap">
+        <span className="marquee text-danger mx-3">Nifty</span>
+        <span className="marquee text-success mx-3">Nifty Auto</span>
+        <span className="marquee text-danger mx-3">Nifty Pharma</span>
+        <span className="marquee text-success mx-3">Nifty Energy</span>
+        <span className="marquee text-danger mx-3">Nifty Metal</span>
       </div>
-    </nav>
+    </>
   );
 };
 

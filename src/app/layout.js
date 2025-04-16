@@ -2,8 +2,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import {HeroSection} from "@/components/HeroSection"
-
-import {Navbar} from "@/components/Navbar"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from "@/components/Navbar"
 import Features from "@/components/Features";
 import InvestmentProducts from "@/components/InvestmentProducts";
 import AIChatbotSection from "@/components/AIChatbotSection";
